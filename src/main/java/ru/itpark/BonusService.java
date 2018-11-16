@@ -2,7 +2,6 @@ package ru.itpark;
 
 public class BonusService {
     public int calculateBonus(int purchaseAmount, int previousPurchasesAmount) {
-        int result;
         int previousPurchasesAmountMin = 1;
         int previousPurchasesAmountBlue = 15_000;
         int previousPurchasesAmountSilver = 150_000;
@@ -11,18 +10,15 @@ public class BonusService {
         int bonusSilver = 70;
         int bonusGold = 100;
 
-        int fullThousandRub = purchaseAmount / totalSum;
+        int fullThousandsRub = purchaseAmount / totalSum;
 
-        if (previousPurchasesAmount < previousPurchasesAmountMin){
-            result = 0;
+        if (previousPurchasesAmount < previousPurchasesAmountMin) {
+            return 0;
         } else if (previousPurchasesAmount <= previousPurchasesAmountBlue) {
-            result = fullThousandRub * bonusBlue;
+            return fullThousandsRub * bonusBlue;
         } else if (previousPurchasesAmount <= previousPurchasesAmountSilver) {
-            result = fullThousandRub * bonusSilver;
-        } else {
-            result = fullThousandRub * bonusGold;
+            return fullThousandsRub * bonusSilver;
         }
-
-        return result;
+        return fullThousandsRub * bonusGold;
     }
 }
