@@ -14,9 +14,11 @@ public class BonusService {
 
         if (previousPurchasesAmount < previousPurchasesAmountMin) {
             return 0;
-        } else if (previousPurchasesAmount <= previousPurchasesAmountBlue) {
+        }
+        if (previousPurchasesAmount <= previousPurchasesAmountBlue) {
             return fullThousandsRub * bonusBlue;
-        } else if (previousPurchasesAmount <= previousPurchasesAmountSilver) {
+        }
+        if (previousPurchasesAmount <= previousPurchasesAmountSilver) {
             return fullThousandsRub * bonusSilver;
         }
         return fullThousandsRub * bonusGold;
